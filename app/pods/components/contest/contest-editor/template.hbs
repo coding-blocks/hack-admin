@@ -1,0 +1,9 @@
+<div class="border-card p-0">
+  <WTabNav
+    @tabs={{tabs}}
+    @onTabChange={{action (mut selectedTab)}}
+    @activeTab={{selectedTab}}
+  >
+    {{component selectedTab.component contest=@contest}}
+  </WTabNav>
+</div>

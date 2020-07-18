@@ -1,0 +1,20 @@
+<tr>
+  <td class="pb-4 pt-4">{{ @contest.name }}</td>
+  <td class="pb-4 pt-4">{{ @contest.contest_type }}</td>
+  <td class="pb-4 pt-4">{{ @contest.created_by }}</td>
+  <td class="pb-4 pt-4">{{ @contest.start_time }}</td>
+  <td class="pb-4 pt-4 hoverable">
+    <span class="red">
+      Actions
+    </span>
+    <div class="pop-up border-card p-3 br-5">
+      <ul>
+        <li>
+          <LinkTo @route="contests.id" @model={{ @contest.id }}>Edit</LinkTo>
+        </li>
+        <li class="divider-h my-3"></li>
+        <li>Delete</li>
+      </ul>
+    </div>
+  </td>
+</tr>

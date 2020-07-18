@@ -1,0 +1,90 @@
+<div>
+  <h2>Contest Details</h2>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Contest Name</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      class="underline-input w-100 pb-3" 
+      @value={{@contest.name}} 
+      @placeholder="Enter Contest Title"
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Contest Type</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <WSelect 
+      @options={{contestTypes}}
+      @selectedValue={{@contest.contest_type}}
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Start Time</label>
+  </div>
+  <div class="col-12 col-md-6">  
+    <EmberFlatpickr 
+      @allowInput={{true}}
+      @appendDataInput={{true}}
+      @date={{readonly @contest.start_time}}
+      @enableTime={{true}}
+      @onChange={{action (mut @contest.start_time)}}
+      @placeholder="Pick start date"
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">End Time</label>
+  </div>
+  <div class="col-12 col-md-6">  
+    <EmberFlatpickr 
+      @allowInput={{true}}
+      @appendDataInput={{true}}
+      @date={{readonly @contest.end_time}}
+      @enableTime={{true}}
+      @onChange={{action (mut @contest.end_time)}}
+      @placeholder="Pick start date"
+    />
+  </div>
+</div>
+
+<div>
+  <h2>Contest Customization</h2>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Contest Icon</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      class="underline-input w-100 pb-3" 
+      @value={{@contest.icon}} 
+      @placeholder="Enter Contest Icon URL"
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Contest Banner</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      class="underline-input w-100 pb-3" 
+      @value={{@contest.image}} 
+      @placeholder="Enter Contest Banner URL"
+    />
+  </div>
+</div>

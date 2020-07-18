@@ -8,4 +8,7 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
   this.route('login');
+  this.route('contests', function() {
+    this.route('id', { path: '/:id' });
+  });
 });

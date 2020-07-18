@@ -1,0 +1,27 @@
+<nav class='main-nav'>
+  <span class='logo-parent'>
+    <LinkTo @route='index'>
+      <img src='https://codingblocks.com/assets/images/cb/cblogo.png' alt='online-logo' class='nav-logo pointer' />
+    </LinkTo>
+  </span>
+  <ul class='nav-list'>
+    {{#if session.isAuthenticated}}
+    <li class='nav-items pointer'>
+      <LinkTo @route='contests'>
+        Contests
+      </LinkTo>
+    </li>
+    <li class='nav-items pointer'>
+      <button class='button-solid white'>
+        Logout
+      </button>
+    </li>
+    {{else}}
+    <li class='nav-items pointer'>
+      <LinkTo class='button-solid white' @route='login'>
+        Login
+      </LinkTo>
+    </li>
+    {{/if}}
+  </ul>
+</nav>

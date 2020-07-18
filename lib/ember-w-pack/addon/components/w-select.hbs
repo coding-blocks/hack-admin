@@ -1,0 +1,7 @@
+<div class="select-container">
+  <select class="underline-select" {{on 'change' (action (mut @selectedValue))}}>
+    {{#each @options as |opt|}}
+    <option value={{opt.value}} selected={{eq @selectedValue opt.value}}>{{opt.name}}</option>
+    {{/each}}
+  </select>
+</div>

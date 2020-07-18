@@ -1,0 +1,18 @@
+<div>
+  <h2>{{ contest.name }}</h2>
+  <div class="mt-4">
+    <a href="/app/contests/{{contest.id}}" target="_blank">Contest Link</a>
+  </div>
+</div>
+
+<div class="mt-4">
+  <Contest::ContestEditor 
+    @contest={{contest}}
+  />
+</div>
+
+{{#if layout.bottomBarElement}}
+  {{#-in-element layout.bottomBarElement}}
+    <Contest::ContestBottomBar @contest={{contest}} />
+  {{/-in-element}}
+{{/if}}

@@ -6,6 +6,7 @@ import { isNone } from '@ember/utils';
 const HackAdminApplicationRoute = Route.extend(ApplicationRouteMixin)
 export default class ApplicationRoute extends HackAdminApplicationRoute {
   @service session;
+  @service currentUser;
 
   queryParams = {
     code: {

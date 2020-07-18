@@ -1,1 +1,10 @@
-{{outlet}}
+<Application::Navbar />
+<div class="body container pt-4">
+  {{outlet}}
+</div>
+<div 
+  id="bottom-bar-container" 
+  class="bottom-bar"
+  {{did-insert layout.setBottomBarElement}}
+>
+</div>

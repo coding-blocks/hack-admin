@@ -1,0 +1,18 @@
+<div class="border-card">
+  <table class="w-100">
+    <thead class="font-sm extra-bold">
+      <td class="pb-4">Contest Name</td>
+      <td class="pb-4">Contest Type</td>
+      <td class="pb-4">Created By</td>
+      <td class="pb-4">Start Time</td>
+      <td class="pb-4"></td>
+    </thead>
+    <tbody>
+      {{#each @contests as |contest|}}
+      <Contest::ContestTable::ContestTableRow 
+        @contest={{ contest }}
+      />
+      {{/each}}
+    </tbody>
+  </table>
+</div>
