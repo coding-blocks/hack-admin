@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<div>
+<div class="mt-4">
   <h2>Contest Customization</h2>
 </div>
 
@@ -68,10 +68,9 @@
     <label class="font-sm">Contest Icon</label>
   </div>
   <div class="col-12 col-md-6">
-    <Input 
-      class="underline-input w-100 pb-3" 
-      @value={{@contest.icon}} 
-      @placeholder="Enter Contest Icon URL"
+    <Form::FileInput 
+      @value={{@contest.icon}}
+      @onUpdate={{action (mut @contest.icon)}}
     />
   </div>
 </div>
@@ -81,10 +80,9 @@
     <label class="font-sm">Contest Banner</label>
   </div>
   <div class="col-12 col-md-6">
-    <Input 
-      class="underline-input w-100 pb-3" 
-      @value={{@contest.image}} 
-      @placeholder="Enter Contest Banner URL"
+    <Form::FileInput 
+      @value={{@contest.image}}
+      @onUpdate={{action (mut @contest.image)}}
     />
   </div>
 </div>

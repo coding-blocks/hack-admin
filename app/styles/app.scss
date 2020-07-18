@@ -1,1 +1,14 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 @import "./components/bottom-bar.scss";
+
+.ember-modal-overlay {
+  z-index: 2000;
+}
+
+.image-preview {
+  background-color: #f3f3f3;
+  img {
+    max-height: 70vh;
+  }
+}

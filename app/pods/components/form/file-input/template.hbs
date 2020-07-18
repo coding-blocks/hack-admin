@@ -1,0 +1,19 @@
+<Form::S3FileInput 
+  @onAfterSign={{action 'onAfterSign'}}
+/>
+{{#if @value}}
+<button class="button" {{action (mut showPreview) true}}>Preview</button>
+<button class="button" {{action @onUpdate null}}>Remove</button>
+{{/if}}
+
+{{#if showPreview}}
+<ModalDialog
+  @onClose={{action (mut showPreview) false}}
+  @translucentOverlay="true"
+  @onClickOverlay={{action (mut showPreview) false}}
+>
+  <div class="image-preview p-5">
+    <img src="{{@value}}" alt="">
+  </div>
+</ModalDialog>
+{{/if}}

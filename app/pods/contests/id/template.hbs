@@ -1,7 +1,7 @@
 <div>
   <h2>{{ contest.name }}</h2>
   <div class="mt-4">
-    <a href="/app/contests/{{contest.id}}" target="_blank">Contest Link</a>
+    <a href="/app/contests/{{contest.id}}" class="red" target="_blank">https://hack.codingblocks.com/app/contests/{{contest.id}}</a>
   </div>
 </div>
 
@@ -13,6 +13,8 @@
 
 {{#if layout.bottomBarElement}}
   {{#-in-element layout.bottomBarElement}}
-    <Contest::ContestBottomBar @contest={{contest}} />
+    <div class="bottom-bar">
+      <Contest::ContestBottomBar @contest={{contest}} />
+    </div>
   {{/-in-element}}
 {{/if}}

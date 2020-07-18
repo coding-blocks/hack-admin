@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { action } from '@ember/object';
 
 export default class ContestContestEditorDetailEditorComponent extends Component {
   contestTypes = [
@@ -11,4 +12,10 @@ export default class ContestContestEditorDetailEditorComponent extends Component
     { value: 'admission_contest', name: 'admission_contest' },
     { value: 'course_contest', name: 'course_contest' }
   ]
+
+  @action
+  didUpload(key, e) {
+    console.log(e)
+    this.args.contest.set(key, e.url)
+  }
 }
