@@ -9,7 +9,7 @@ export default class ContestContestEditorComponent extends Component {
     },
     {
       name: 'Permission Settings',
-      component: 'contest/contest-editor/detail-editor'
+      component: 'contest/contest-editor/permission-editor'
     },
     {
       name: 'Challenges',

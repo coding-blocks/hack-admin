@@ -17,7 +17,7 @@ export default class ContestModel extends Model {
   @attr() contest_type;
   @attr() badge_icon;
   @attr() badge_theme;
-  @attr() registration_form;
+  @attr({ defaultValue: {fields: []} }) registration_form;
   @attr() accept_registrations;
   @attr() allow_testcase_editorial_unlock;
   @attr() created_by;

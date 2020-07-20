@@ -1,0 +1,7 @@
+{{#if (eq @field.type "text")}}
+  <Common::FormEditor::FieldView::TextField @field={{@field}} />
+{{else if (eq @field.type "radio")}}
+  <Common::FormEditor::FieldView::RadioField @field={{@field}} />
+{{else if (eq @field.type "checkbox")}}
+  <Common::FormEditor::FieldView::CheckboxField @field={{@field}} />
+{{/if}}

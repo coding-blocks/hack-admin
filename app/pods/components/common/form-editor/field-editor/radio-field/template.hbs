@@ -1,0 +1,50 @@
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-4">
+    <label class="font-sm">Field Title</label>
+  </div>
+  <div class="col-12 col-md-8">
+    <Input 
+      class="underline-input w-100 pb-3" 
+      @value={{@field.title}} 
+    />
+  </div>
+</div>
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-4">
+    <label class="font-sm">Field Name</label>
+  </div>
+  <div class="col-12 col-md-8">
+    <Input 
+      class="underline-input w-100 pb-3" 
+      @value={{@field.name}} 
+    />
+    <small style="font-xs">Dont use spaces use underscore instead</small>
+  </div>
+</div>
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-4">
+    <label class="font-sm">Required Field ?</label>
+  </div>
+  <div class="col-12 col-md-8">
+    <Input 
+      @type="checkbox"
+      @checked={{@field.required}} 
+    />
+  </div>
+</div>
+
+<div class="my-3">
+  <button class="button" {{action 'addOption'}}>Add Option (+)</button>
+</div>
+
+{{#each @field.options as |option|}}
+  <div>
+    <Common::FormEditor::FieldEditor::RadioFieldOption @option={{option}} />
+    <div>
+      <button class="button button-dashed" {{action 'deleteOption' option}}>
+        Delete Option
+      </button>
+    </div>
+  </div>
+{{/each}}
+

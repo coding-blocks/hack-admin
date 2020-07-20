@@ -1,0 +1,40 @@
+<div class="d-flex align-items-center">
+  <label>Select Field Type</label>
+  <div class="mx-4">
+    <WSelect 
+      @options={{availableFields}}
+      @selectedValue={{selectedField}}
+    />
+  </div>
+  <button class="button button-solid" {{action 'addField'}}>
+    Add Field (+)
+  </button>
+</div>
+
+<div class="row mt-4">
+  <div class="col-7">
+    <h3>Editor</h3>
+    {{#each @form.fields as |field|}}
+      <div class="mt-4">
+        <Common::FormEditor::FieldEditor 
+          @onDelete={{action 'deleteField' field}}
+          @field={{field}}
+        />
+      </div>
+    {{/each}}
+  </div>
+  <div class="col-5">
+    <h3>Preview</h3>
+    {{#each form.fields as |field|}}
+      <div class="d-flex mt-4">
+        <label>{{field.title}} {{if field.required "*"}}</label>
+        <Common::FormEditor::FieldView 
+          @field={{field}}
+        />
+      </div>
+    {{/each}}
+    <button class="button button-solid mt-4">
+      Register
+    </button>
+  </div>
+</div>

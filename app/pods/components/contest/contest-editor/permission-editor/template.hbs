@@ -1,0 +1,63 @@
+<div>
+  <h2>Contest Permissions</h2>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Is Locked ?</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      @type="checkbox"
+      @checked={{@contest.locked_contest}} 
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Can unlock editorial and testcases ?</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      @type="checkbox"
+      @checked={{@contest.allow_testcase_editorial_unlock}} 
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Accepting Registrations ?</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      @type="checkbox"
+      @checked={{@contest.accept_registrations}} 
+    />
+    {{#if @contest.accept_registrations}}
+      <button class="button button-solid" {{action (mut showRegistrationForm) true}}>Form Editor</button>
+    {{/if}}
+  </div>
+</div>
+
+
+{{#if showRegistrationForm}}
+  <ModalDialog
+    @onClose={{action (mut showRegistrationForm) false}}
+    @translucentOverlay="true"
+    @onClickOverlay={{action (mut showRegistrationForm) false}}
+  >
+    <div style="width: 50vw" class="p-4">
+      <div>
+        <h2>Registration Form</h2>
+      </div>
+
+      <div class="mt-4">
+        <Common::FormEditor 
+          @form={{@contest.registration_form}}
+        />
+      </div>
+    </div>
+  </ModalDialog>
+{{/if}}

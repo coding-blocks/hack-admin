@@ -1,0 +1,4 @@
+{{#each @field.options as |option|}}
+  <input type="radio" name={{field.name}} value={{option.value}}>
+  <label>{{option.name}}</label>
+{{/each}}

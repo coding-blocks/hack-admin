@@ -1,0 +1,17 @@
+<div class="border-card">
+  <div class="font-md bold">{{ @field.title }}</div>
+
+  {{#if (eq @field.type "text")}}
+    <Common::FormEditor::FieldEditor::TextField @field={{@field}} />
+  {{else if (eq @field.type "radio")}}
+    <Common::FormEditor::FieldEditor::RadioField @field={{@field}} />
+  {{else if (eq @field.type "checkbox")}}
+    <Common::FormEditor::FieldEditor::CheckboxField @field={{@field}} />
+  {{/if}}
+
+  <div class="mt-4">
+    <button class="button button-solid" {{action @onDelete}}>
+      Delete Field
+    </button>
+  </div>
+</div>
