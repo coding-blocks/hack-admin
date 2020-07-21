@@ -1,0 +1,92 @@
+<div>
+  <h2>Advanced Settings</h2>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Email Verification Required ?</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      @type="checkbox"
+      @checked={{@contest.control_flags.is-verification-required}} 
+      @click={{action (toggle @contest.control_flags.is-verification-required)}}
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Show Leaderboard ?</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <Input 
+      @type="checkbox"
+      @checked={{@contest.control_flags.show-leaderboard}} 
+    />
+  </div>
+</div>
+
+<div class="d-flex mt-4 align-items-center">
+  <div class="col-12 col-md-2">
+    <label class="font-sm">Allowed Languages</label>
+  </div>
+  <div class="col-12 col-md-6">
+    <div>
+      <label>C</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_c}} 
+        @click={{action 'toggleLanguage' 'c'}}
+      />
+    </div>
+    <div>
+      <label>C++</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_cpp}} 
+        @click={{action 'toggleLanguage' 'cpp'}}
+      />
+    </div>
+    <div>
+      <label>Java</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_java}} 
+        @click={{action 'toggleLanguage' 'java'}}
+      />
+    </div>
+    <div>
+      <label>JavaScript</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_js}} 
+        @click={{action 'toggleLanguage' 'js'}}
+      />
+    </div>
+    <div>
+      <label>Python 2</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_py2}} 
+        @click={{action 'toggleLanguage' 'py2'}}
+      />
+    </div>
+    <div>
+      <label>Python 3</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_py3}} 
+        @click={{action 'toggleLanguage' 'py3'}}
+      />
+    </div>
+    <div>
+      <label>C#</label>
+      <Input 
+        @type="checkbox"
+        @checked={{@contest.allowed_language_csharp}} 
+        @click={{action 'toggleLanguage' 'csharp'}}
+      />
+    </div>
+  </div>
+</div>
