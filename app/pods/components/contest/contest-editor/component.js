@@ -21,7 +21,7 @@ export default class ContestContestEditorComponent extends Component {
     },
     {
       name: 'Allowed Users',
-      component: 'contest/contest-editor/detail-editor'
+      component: 'contest/contest-editor/allowed-user-editor'
     },
   ]
 }
