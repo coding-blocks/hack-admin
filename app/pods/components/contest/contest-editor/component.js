@@ -13,7 +13,7 @@ export default class ContestContestEditorComponent extends Component {
     },
     {
       name: 'Challenges',
-      component: 'contest/contest-editor/detail-editor'
+      component: 'contest/contest-editor/challenges-editor'
     },
     {
       name: 'Advanced Settings',

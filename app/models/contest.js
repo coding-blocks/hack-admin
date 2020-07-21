@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class ContestModel extends Model {
   @attr() name;
@@ -23,4 +23,6 @@ export default class ContestModel extends Model {
   @attr() created_by;
   @attr() reviewedById;
   @attr() publishedById;
+
+  @hasMany('contents') contents;
 }

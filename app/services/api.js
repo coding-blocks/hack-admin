@@ -4,23 +4,28 @@ import ENV from 'hack-admin/config/environment';
 import fetch from 'fetch';
 
 export default class ApiService extends Service {
-  @service session
+  @service session;
 
-  host = ENV.apiHost
+  host = ENV.apiHost;
+  namespace = ENV.namespace;
 
   @computed('session.data.authenticated.jwt')
   get headers() {
     const jwt = this.get('session.data.authenticated.jwt');
     return {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
       ...(jwt ? {
         Authorization: `JWT ${jwt}`
       } : {})
     }
   }
 
-  request(url, opts = {}) {
+  request(path, opts = {}) {
+    const url = this.host + '/' + this.namespace + '/' + path
     return fetch(url, {
       ...opts,
+      body: JSON.stringify(opts.body),
       headers: this.headers,
       json: true
     })
